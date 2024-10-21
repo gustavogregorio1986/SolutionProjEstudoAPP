@@ -1,1 +1,29 @@
-<p>cadastro works!</p>
+<div class="container mt-5">
+    <h2>Cadastro de Funcionario</h2>
+    <form>
+      <div class="form-group">
+        <label for="NomeFuncionario">Nome do Funcionario</label>
+        <input type="text" class="form-control" id="NomeFuncionario" placeholder="Digite seu nome do funcionario">
+      </div>
+      <div class="form-group">
+        <label for="EmailFuncionario">Email do Funcionario</label>
+        <input type="email" class="form-control" id="EmailFuncionario" placeholder="Digite seu email do funcionario">
+      </div>
+      <div class="form-group">
+        <label for="Sexo">Sexo</label>
+        <select class="form-control" id="Sexo">
+          <option value="">Selecione seu sexo</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+          <option value="nao_informar">Prefiro não informar</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Salario">Salario</label>
+        <input type="text" class="form-control" id="Salario" placeholder="Digite seu Salario">
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <app-footer></app-footer>
+  </div>
