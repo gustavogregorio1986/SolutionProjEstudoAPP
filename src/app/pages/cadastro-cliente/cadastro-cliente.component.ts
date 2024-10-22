@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -9,6 +10,8 @@ import { FooterComponent } from "../footer/footer.component";
   styleUrl: './cadastro-cliente.component.css'
 })
 export class CadastroClienteComponent implements OnInit{
+
+  cadastroEmpresaForm!: FormGroup;
 
   constructor(){}
 
