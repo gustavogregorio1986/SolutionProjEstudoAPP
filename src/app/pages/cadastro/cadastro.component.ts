@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 
 @Component({
@@ -8,6 +8,10 @@ import { FooterComponent } from "../footer/footer.component";
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
-export class CadastroComponent {
+export class CadastroComponent implements OnInit {
 
+  constructor(){}
+
+  ngOnInit(): void {
+  }
 }
