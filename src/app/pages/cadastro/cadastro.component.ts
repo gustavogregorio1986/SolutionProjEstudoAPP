@@ -13,8 +13,23 @@ export class CadastroComponent implements OnInit {
 
   cadastroForm!: FormGroup;
 
-  constructor(){}
+  constructor(private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
+    this.cadastroForm = this.formBuilder.group({
+      NomeFuncionario: ['', Validators.required],
+      EmailFuncionario: ['', Validators.required],
+      Sexo: ['', Validators.required],
+      Salario: ['', Validators.required] 
+     });
+  }
+
+  onSubmit(): void {
+    if (this.cadastroForm.valid) {
+      console.log(this.cadastroForm.value);
+      
+    } else {
+      console.log('Formulário inválido');
+    }
   }
 }

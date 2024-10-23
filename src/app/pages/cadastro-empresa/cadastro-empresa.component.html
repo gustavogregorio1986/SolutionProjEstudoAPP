@@ -1,17 +1,26 @@
 <div class="container mt-5">
     <h2>Cadastro de Empresa</h2>
-    <form>
+    <form [formGroup]="cadastroEmpresaForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="NomeEmpresa">Nome do Empresa</label>
-        <input type="text" class="form-control" id="NomeEmpresa" placeholder="Digite seu nome da Empresa">
+        <input type="text" class="form-control" id="NomeEmpresa" formControlName="NomeEmpresa" placeholder="Digite seu nome da Empresa">
+        <div *ngIf="cadastroForm.get('NomeEmpresa')?.invalid && cadastroForm.get('NomeEmpresa')?.touched">
+          <small *ngIf="cadastroForm.get('NomeEmpresa')?.errors?.['required']">O Tipo é obrigatório.</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="Cnpj">Cnpj</label>
-        <input type="text" class="form-control" id="Cnpj" placeholder="Digite seu Cnpj">
+        <input type="text" class="form-control" id="Cnpj" formControlName="Cnpj" placeholder="Digite seu Cnpj">
+        <div *ngIf="cadastroForm.get('Cnpj')?.invalid && cadastroForm.get('Cnpj')?.touched">
+          <small *ngIf="cadastroForm.get('Cnpj')?.errors?.['required']">O Cnpj é obrigatório.</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="Setor">Setor</label>
-        <input type="text" class="form-control" id="Setor" placeholder="Digite seu Setor">
+        <input type="text" class="form-control" id="Setor" formControlName="Setor" placeholder="Digite seu Setor">
+        <div *ngIf="cadastroForm.get('Setor')?.invalid && cadastroForm.get('Setor')?.touched">
+          <small *ngIf="cadastroForm.get('Setor')?.errors?.['required']">O Setor é obrigatório.</small>
+        </div>
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

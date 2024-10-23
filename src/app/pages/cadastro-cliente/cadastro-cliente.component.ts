@@ -11,10 +11,23 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class CadastroClienteComponent implements OnInit{
 
-  cadastroEmpresaForm!: FormGroup;
+  cadastroClienteForm!: FormGroup;
 
-  constructor(){}
+  constructor(private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
+    this.cadastroClienteForm = this.formBuilder.group({
+      NomeEmpresa:['', Validators.required],
+      Setor:['', Validators.required],
+      Tipo:['', Validators.required]
+    })
+  }
+
+  onSubmit(): void {
+      if(this.cadastroClienteForm.valid){
+        console.log(this.cadastroClienteForm.value);
+      }else{
+        console.log('Formulário inválido');
+      }
   }
 }

@@ -1,27 +1,39 @@
 <div class="container mt-5">
     <h2>Cadastro de Funcionario</h2>
-    <form>
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="NomeFuncionario">Nome do Funcionario</label>
-        <input type="text" class="form-control" id="NomeFuncionario" placeholder="Digite seu nome do funcionario">
+        <input type="text" class="form-control" id="NomeFuncionario" formControlName="NomeFuncionario" placeholder="Digite seu nome do funcionario">
+        <div *ngIf="cadastroForm.get('NomeFuncionario')?.invalid && cadastroForm.get('NomeFuncionario')?.touched">
+          <small *ngIf="cadastroForm.get('NomeFuncionario')?.errors?.['required']">O nome do funcionario é obrigatório.</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="EmailFuncionario">Email do Funcionario</label>
-        <input type="email" class="form-control" id="EmailFuncionario" placeholder="Digite seu email do funcionario">
+        <input type="email" class="form-control" id="EmailFuncionario" formControlName="NomeFuncionario" placeholder="Digite seu email do funcionario">
+        <div *ngIf="cadastroForm.get('EmailFuncionario')?.invalid && cadastroForm.get('EmailFuncionario')?.touched">
+          <small *ngIf="cadastroForm.get('EmailFuncionario')?.errors?.['required']">O email do funcionario é obrigatório.</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="Sexo">Sexo</label>
-        <select class="form-control" id="Sexo">
+        <select class="form-control" id="Sexo" formControlName="Sexo">
           <option value="">Selecione seu sexo</option>
           <option value="masculino">Masculino</option>
           <option value="feminino">Feminino</option>
           <option value="outro">Outro</option>
           <option value="nao_informar">Prefiro não informar</option>
         </select>
+        <div *ngIf="cadastroForm.get('Sexo')?.invalid && cadastroForm.get('Sexo')?.touched">
+          <small *ngIf="cadastroForm.get('Sexo')?.errors?.['required']">O sexo do funcionario é obrigatório.</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="Salario">Salario</label>
-        <input type="text" class="form-control" id="Salario" placeholder="Digite seu Salario">
+        <input type="text" class="form-control" id="Salario" formControlName="Salario" placeholder="Digite seu Salario">
+        <div *ngIf="cadastroForm.get('Salario')?.invalid && cadastroForm.get('Salario')?.touched">
+          <small *ngIf="cadastroForm.get('Salario')?.errors?.['required']">O sexo do funcionario é obrigatório.</small>
+        </div>
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
