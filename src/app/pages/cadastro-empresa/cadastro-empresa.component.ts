@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-empresa',
   standalone: true,
-  imports: [FooterComponent],
+  imports: [FooterComponent, ReactiveFormsModule],
   templateUrl: './cadastro-empresa.component.html',
   styleUrl: './cadastro-empresa.component.css'
 })
